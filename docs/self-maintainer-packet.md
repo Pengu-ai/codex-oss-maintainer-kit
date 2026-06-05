@@ -8,13 +8,14 @@ Generated: 2026-06-05
 - Local path: `/Users/akashi/PenguLab/codex-oss-maintainer-kit`
 - Maintainer: Pengu-ai
 - Default/current branch: `main`
-- Latest tag/release: `v0.2.1`
+- Latest tag/release: `v0.2.2`
 - Activity window: last 90 days
 
 ## Active Maintenance Evidence
 
-- Recent commits found: 7
+- Recent commits found: 8
 - Recent commit examples:
+  - 140c397 2026-06-05 Pengu-ai Make packets evidence-bound by default
   - 47a8487 2026-06-05 Pengu-ai Fix public evidence metadata and install docs
   - b3520ce 2026-06-05 Pengu-ai Record public GitHub self evidence
   - dac75fe 2026-06-05 Pengu-ai Set public GitHub project URLs
@@ -54,7 +55,7 @@ Generated: 2026-06-05
   - src/codex_oss_maintainer_kit/serialize.py
   - tests/test_cli.py
 - Contributors observed in Git history:
-  - 7	Pengu-ai
+  - 8	Pengu-ai
 
 ## GitHub Public Signals
 
@@ -63,12 +64,13 @@ Generated: 2026-06-05
 - Forks: 0
 - Open issues/PRs counter: 3
 - GitHub default branch: `main`
-- Last pushed at: 2026-06-05T14:15:05Z
+- Last pushed at: 2026-06-05T14:47:54Z
 - License: MIT
 - Merged pull requests in window: 0
 - Closed issues in window: 0
-- Recent releases found: 2
+- Recent releases found: 3
 - Recent releases:
+  - v0.2.2: v0.2.2 - Evidence-bound defaults (2026-06-05T14:47:55Z) - https://github.com/Pengu-ai/codex-oss-maintainer-kit/releases/tag/v0.2.2
   - v0.2.1: v0.2.1 - Evidence metadata and install doc fixes (2026-06-05T14:15:05Z) - https://github.com/Pengu-ai/codex-oss-maintainer-kit/releases/tag/v0.2.1
   - v0.2.0: v0.2.0 - GitHub enrichment and JSON examples (2026-06-05T04:22:39Z) - https://github.com/Pengu-ai/codex-oss-maintainer-kit/releases/tag/v0.2.0
 
