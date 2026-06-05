@@ -39,11 +39,49 @@ codex-oss-kit /path/to/repo \
   --out maintainer-packet.md
 ```
 
+The explicit subcommand form is also supported:
+
+```bash
+codex-oss-kit packet /path/to/repo --out maintainer-packet.md
+```
+
+Collect GitHub public signals with `gh`:
+
+```bash
+codex-oss-kit packet /path/to/repo \
+  --repo-url https://github.com/owner/repo \
+  --github \
+  --out maintainer-packet.md
+```
+
+Write machine-readable JSON:
+
+```bash
+codex-oss-kit packet /path/to/repo \
+  --format json \
+  --out maintainer-profile.json
+```
+
+Generate sample outputs:
+
+```bash
+codex-oss-kit demo --out-dir docs/examples
+```
+
 Without installation:
 
 ```bash
 python -m codex_oss_maintainer_kit /path/to/repo --out maintainer-packet.md
 ```
+
+## Outputs
+
+- Markdown packet: [demo-maintainer-packet.md](docs/examples/demo-maintainer-packet.md)
+- JSON profile: [demo-profile.json](docs/examples/demo-profile.json)
+- Self-dogfood packet: [self-maintainer-packet.md](docs/self-maintainer-packet.md)
+- Self-dogfood JSON: [self-profile.json](docs/self-profile.json)
+
+The GitHub enrichment reads public signals through `gh`: stars, forks, the GitHub open issues/PRs counter, recent merged pull requests, recent closed issues, recent releases, license, default branch, and latest push time. If `gh` is missing, unauthenticated, or offline, the packet keeps going and records collection warnings.
 
 ## Why This Exists
 
@@ -60,7 +98,6 @@ This kit creates a structured starting point that maintainers can verify, edit, 
 
 ## Roadmap
 
-- GitHub issue and PR enrichment through `gh` or GitHub API.
 - npm, PyPI, crates.io, and Docker download signal collection.
 - Release-note generation from merged PRs.
 - Security-triage packet generation.
@@ -69,8 +106,9 @@ This kit creates a structured starting point that maintainers can verify, edit, 
 ## Development
 
 ```bash
-python -m pytest
-python -m codex_oss_maintainer_kit . --out examples/self-packet.md
+PYTHONPATH=src python3 -m unittest discover -s tests
+PYTHONPATH=src python3 -m codex_oss_maintainer_kit . --out docs/self-maintainer-packet.md
+PYTHONPATH=src python3 -m codex_oss_maintainer_kit demo --out-dir docs/examples
 ```
 
 ## License

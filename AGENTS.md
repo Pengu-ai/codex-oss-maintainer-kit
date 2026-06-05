@@ -17,4 +17,5 @@ Run:
 ```bash
 PYTHONPATH=src python3 -m unittest discover -s tests
 PYTHONPATH=src python3 -m codex_oss_maintainer_kit --help
+PYTHONPATH=src python3 -m codex_oss_maintainer_kit demo --out-dir docs/examples
 ```

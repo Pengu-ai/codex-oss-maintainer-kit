@@ -1,60 +1,53 @@
-# codex-oss-maintainer-kit Maintainer Evidence Packet
+# demo-maintainer-project Maintainer Evidence Packet
 
 Generated: 2026-06-05
 
 ## Repository Snapshot
 
-- Repository: TODO: add public GitHub URL
-- Local path: `/Users/akashi/PenguLab/codex-oss-maintainer-kit`
-- Maintainer: Pengu-ai
+- Repository: https://github.com/example/demo-maintainer-project
+- Local path: `/path/to/demo-maintainer-project`
+- Maintainer: @example-maintainer
 - Default/current branch: `main`
-- Latest tag: `No Git tag found yet`
+- Latest tag: `v0.3.0`
 - Activity window: last 90 days
 
 ## Active Maintenance Evidence
 
-- Recent commits found: 3
+- Recent commits found: 18
 - Recent commit examples:
-  - 9580925 2026-06-05 Pengu-ai Add GitHub enrichment and JSON examples
-  - 2f6ac33 2026-06-05 Pengu-ai Add X post explainer card
-  - 28ca5d5 2026-06-05 Pengu-ai Initial maintainer evidence kit
+  - a1b2c3d 2026-06-02 Example Maintainer Fix release checklist
+  - d4e5f6a 2026-05-28 Example Maintainer Review contributor docs
+  - f7a8b9c 2026-05-20 Example Maintainer Add security triage notes
 - Recently touched files:
-  - .github/ISSUE_TEMPLATE/bug_report.md
-  - .github/ISSUE_TEMPLATE/feature_request.md
   - .github/workflows/ci.yml
-  - .gitignore
-  - AGENTS.md
   - CHANGELOG.md
-  - CONTRIBUTING.md
-  - LICENSE
   - README.md
   - SECURITY.md
-  - docs/application-copy-draft.md
-  - docs/codex-for-oss-application-playbook.md
-  - docs/examples/demo-maintainer-packet.md
-  - docs/examples/demo-profile.json
-  - docs/public-launch-checklist.md
-  - docs/self-maintainer-packet.md
-  - docs/self-profile.json
-  - pyproject.toml
-  - social/x-post-card-ja.png
-  - social/x-post-card-ja.svg
-  - src/codex_oss_maintainer_kit/__init__.py
-  - src/codex_oss_maintainer_kit/__main__.py
-  - src/codex_oss_maintainer_kit/cli.py
-  - src/codex_oss_maintainer_kit/demo.py
-  - src/codex_oss_maintainer_kit/git_inspector.py
-  - src/codex_oss_maintainer_kit/github_inspector.py
-  - src/codex_oss_maintainer_kit/models.py
-  - src/codex_oss_maintainer_kit/render.py
-  - src/codex_oss_maintainer_kit/serialize.py
-  - tests/test_cli.py
+  - src/demo_project/release.py
+  - tests/test_release.py
 - Contributors observed in Git history:
-  - 3	Pengu-ai
+  - 12	Example Maintainer
+  - 3	External Contributor
 
 ## GitHub Public Signals
 
-- Not collected. Re-run with `--github` and a public GitHub remote or `--repo-url`.
+- GitHub repository: https://github.com/example/demo-maintainer-project
+- Stars: 128
+- Forks: 17
+- Open issues/PRs counter: 6
+- GitHub default branch: `main`
+- Last pushed at: 2026-06-05T02:00:00Z
+- License: MIT
+- Merged pull requests in window: 2
+- Closed issues in window: 1
+- Recent releases found: 1
+- Recent merged pull requests:
+  - #42 Add release checklist (2026-06-01T12:00:00Z) - https://github.com/example/demo-maintainer-project/pull/42
+  - #39 Improve contributor onboarding (2026-05-24T09:00:00Z) - https://github.com/example/demo-maintainer-project/pull/39
+- Recent closed issues:
+  - #31 Document security report flow (2026-05-29T18:00:00Z) - https://github.com/example/demo-maintainer-project/issues/31
+- Recent releases:
+  - v0.3.0: v0.3.0 (2026-06-03T00:00:00Z) - https://github.com/example/demo-maintainer-project/releases/tag/v0.3.0
 
 ## Maintainer Workload
 

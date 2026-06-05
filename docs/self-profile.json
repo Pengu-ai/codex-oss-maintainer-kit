@@ -1,0 +1,52 @@
+{
+  "project_name": "codex-oss-maintainer-kit",
+  "repo_path": "/Users/akashi/PenguLab/codex-oss-maintainer-kit",
+  "repo_url": null,
+  "maintainer": "Pengu-ai",
+  "branch": "main",
+  "latest_tag": null,
+  "activity_window_days": 90,
+  "commit_count": 3,
+  "recent_commits": [
+    "9580925 2026-06-05 Pengu-ai Add GitHub enrichment and JSON examples",
+    "2f6ac33 2026-06-05 Pengu-ai Add X post explainer card",
+    "28ca5d5 2026-06-05 Pengu-ai Initial maintainer evidence kit"
+  ],
+  "contributors": [
+    "3\tPengu-ai"
+  ],
+  "changed_files": [
+    ".github/ISSUE_TEMPLATE/bug_report.md",
+    ".github/ISSUE_TEMPLATE/feature_request.md",
+    ".github/workflows/ci.yml",
+    ".gitignore",
+    "AGENTS.md",
+    "CHANGELOG.md",
+    "CONTRIBUTING.md",
+    "LICENSE",
+    "README.md",
+    "SECURITY.md",
+    "docs/application-copy-draft.md",
+    "docs/codex-for-oss-application-playbook.md",
+    "docs/examples/demo-maintainer-packet.md",
+    "docs/examples/demo-profile.json",
+    "docs/public-launch-checklist.md",
+    "docs/self-maintainer-packet.md",
+    "docs/self-profile.json",
+    "pyproject.toml",
+    "social/x-post-card-ja.png",
+    "social/x-post-card-ja.svg",
+    "src/codex_oss_maintainer_kit/__init__.py",
+    "src/codex_oss_maintainer_kit/__main__.py",
+    "src/codex_oss_maintainer_kit/cli.py",
+    "src/codex_oss_maintainer_kit/demo.py",
+    "src/codex_oss_maintainer_kit/git_inspector.py",
+    "src/codex_oss_maintainer_kit/github_inspector.py",
+    "src/codex_oss_maintainer_kit/models.py",
+    "src/codex_oss_maintainer_kit/render.py",
+    "src/codex_oss_maintainer_kit/serialize.py",
+    "tests/test_cli.py"
+  ],
+  "generated_on": "2026-06-05",
+  "github": null
+}

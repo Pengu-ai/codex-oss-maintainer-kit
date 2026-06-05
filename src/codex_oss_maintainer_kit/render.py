@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from .git_inspector import RepoProfile
+from .models import GitHubSignals, RepoProfile
 
 
 def render_packet(profile: RepoProfile) -> str:
@@ -33,6 +33,10 @@ def render_packet(profile: RepoProfile) -> str:
             *(_bullet_lines(profile.changed_files) or ["  - TODO: add real maintenance activity"]),
             "- Contributors observed in Git history:",
             *(_bullet_lines(profile.contributors) or ["  - TODO: add contributors as the project grows"]),
+            "",
+            "## GitHub Public Signals",
+            "",
+            *_github_lines(profile.github),
             "",
             "## Maintainer Workload",
             "",
@@ -87,3 +91,66 @@ def render_packet(profile: RepoProfile) -> str:
 
 def _bullet_lines(lines: list[str]) -> list[str]:
     return [f"  - {line}" for line in lines]
+
+
+def _github_lines(github: GitHubSignals | None) -> list[str]:
+    if github is None:
+        return [
+            "- Not collected. Re-run with `--github` and a public GitHub remote or `--repo-url`.",
+        ]
+
+    lines = [
+        f"- GitHub repository: {github.repo_html_url or github.repo_full_name or 'Unknown'}",
+        f"- Stars: {_value_or_todo(github.stars, 'TODO: add public adoption signal')}",
+        f"- Forks: {_value_or_todo(github.forks, 'TODO: add public fork signal')}",
+        f"- Open issues/PRs counter: {_value_or_todo(github.open_issues, 'TODO: collect issue/PR count')}",
+        f"- GitHub default branch: `{github.default_branch or 'Unknown'}`",
+        f"- Last pushed at: {github.pushed_at or 'Unknown'}",
+        f"- License: {github.license_spdx_id or 'Unknown'}",
+        f"- Merged pull requests in window: {len(github.merged_pull_requests)}",
+        f"- Closed issues in window: {len(github.closed_issues)}",
+        f"- Recent releases found: {len(github.recent_releases)}",
+    ]
+    if github.warnings:
+        lines.append("- Collection warnings:")
+        lines.extend(f"  - {warning}" for warning in github.warnings)
+    if github.merged_pull_requests:
+        lines.append("- Recent merged pull requests:")
+        lines.extend(_linked_item_lines(github.merged_pull_requests, "mergedAt"))
+    if github.closed_issues:
+        lines.append("- Recent closed issues:")
+        lines.extend(_linked_item_lines(github.closed_issues, "closedAt"))
+    if github.recent_releases:
+        lines.append("- Recent releases:")
+        lines.extend(_release_lines(github.recent_releases))
+    return lines
+
+
+def _value_or_todo(value: int | None, fallback: str) -> str:
+    if value is None:
+        return fallback
+    return str(value)
+
+
+def _linked_item_lines(items: list[dict[str, object]], date_key: str) -> list[str]:
+    lines = []
+    for item in items[:5]:
+        number = item.get("number", "?")
+        title = item.get("title", "Untitled")
+        url = item.get("url", "")
+        happened_at = item.get(date_key, "unknown date")
+        suffix = f" - {url}" if url else ""
+        lines.append(f"  - #{number} {title} ({happened_at}){suffix}")
+    return lines
+
+
+def _release_lines(items: list[dict[str, object]]) -> list[str]:
+    lines = []
+    for item in items[:5]:
+        tag = item.get("tag_name") or item.get("tagName") or "unknown tag"
+        name = item.get("name") or tag
+        published_at = item.get("published_at") or item.get("publishedAt") or "unknown date"
+        url = item.get("html_url") or item.get("url") or ""
+        suffix = f" - {url}" if url else ""
+        lines.append(f"  - {tag}: {name} ({published_at}){suffix}")
+    return lines

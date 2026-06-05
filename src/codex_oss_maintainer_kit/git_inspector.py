@@ -1,25 +1,10 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
 from datetime import date
 from pathlib import Path
 import subprocess
 
-
-@dataclass(frozen=True)
-class RepoProfile:
-    project_name: str
-    repo_path: Path
-    repo_url: str | None
-    maintainer: str | None
-    branch: str | None
-    latest_tag: str | None
-    activity_window_days: int
-    commit_count: int
-    recent_commits: list[str]
-    contributors: list[str]
-    changed_files: list[str]
-    generated_on: date
+from .models import GitHubSignals, RepoProfile
 
 
 def inspect_repository(
@@ -28,6 +13,7 @@ def inspect_repository(
     project_name: str | None,
     maintainer: str | None,
     days: int,
+    github: GitHubSignals | None = None,
 ) -> RepoProfile:
     if not repo_path.exists():
         raise FileNotFoundError(f"Repository path does not exist: {repo_path}")
@@ -74,6 +60,7 @@ def inspect_repository(
         contributors=contributors[:12],
         changed_files=sorted(set(changed_files))[:30],
         generated_on=date.today(),
+        github=github,
     )
 
 
