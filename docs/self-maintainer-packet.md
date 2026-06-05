@@ -5,7 +5,7 @@ Generated: 2026-06-05
 ## Repository Snapshot
 
 - Repository: https://github.com/Pengu-ai/codex-oss-maintainer-kit
-- Local path: `/Users/akashi/PenguLab/codex-oss-maintainer-kit`
+- Inspected directory: `codex-oss-maintainer-kit`
 - Maintainer: Pengu-ai
 - Default/current branch: `main`
 - Latest tag/release: `v0.2.2`
@@ -13,8 +13,9 @@ Generated: 2026-06-05
 
 ## Active Maintenance Evidence
 
-- Recent commits found: 8
+- Recent commits found: 9
 - Recent commit examples:
+  - 3b720e6 2026-06-05 Pengu-ai Refresh self evidence after v0.2.2 release
   - 140c397 2026-06-05 Pengu-ai Make packets evidence-bound by default
   - 47a8487 2026-06-05 Pengu-ai Fix public evidence metadata and install docs
   - b3520ce 2026-06-05 Pengu-ai Record public GitHub self evidence
@@ -55,7 +56,7 @@ Generated: 2026-06-05
   - src/codex_oss_maintainer_kit/serialize.py
   - tests/test_cli.py
 - Contributors observed in Git history:
-  - 8	Pengu-ai
+  - 9	Pengu-ai
 
 ## GitHub Public Signals
 
@@ -64,7 +65,7 @@ Generated: 2026-06-05
 - Forks: 0
 - Open issues/PRs counter: 3
 - GitHub default branch: `main`
-- Last pushed at: 2026-06-05T14:47:54Z
+- Last pushed at: 2026-06-05T14:48:35Z
 - License: MIT
 - Merged pull requests in window: 0
 - Closed issues in window: 0

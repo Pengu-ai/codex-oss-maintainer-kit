@@ -9,7 +9,7 @@ from .models import RepoProfile
 
 def profile_to_dict(profile: RepoProfile) -> dict[str, Any]:
     data = asdict(profile)
-    data["repo_path"] = str(profile.repo_path)
+    data["repo_path"] = profile.repo_path.name
     data["generated_on"] = profile.generated_on.isoformat()
     return data
 

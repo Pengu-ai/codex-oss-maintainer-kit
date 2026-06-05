@@ -5,7 +5,7 @@ Generated: 2026-06-05
 ## Repository Snapshot
 
 - Repository: https://github.com/example/demo-maintainer-project
-- Local path: `/path/to/demo-maintainer-project`
+- Inspected directory: `demo-maintainer-project`
 - Maintainer: @example-maintainer
 - Default/current branch: `main`
 - Latest tag/release: `v0.3.0`

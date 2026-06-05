@@ -1,6 +1,6 @@
 {
   "project_name": "demo-maintainer-project",
-  "repo_path": "/path/to/demo-maintainer-project",
+  "repo_path": "demo-maintainer-project",
   "repo_url": "https://github.com/example/demo-maintainer-project",
   "maintainer": "@example-maintainer",
   "branch": "main",

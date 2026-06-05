@@ -17,7 +17,7 @@ def render_packet(profile: RepoProfile, include_application_draft: bool = False)
         "## Repository Snapshot",
         "",
         f"- Repository: {repo_url}",
-        f"- Local path: `{profile.repo_path}`",
+        f"- Inspected directory: `{profile.repo_path.name}`",
         f"- Maintainer: {maintainer}",
         f"- Default/current branch: `{branch}`",
         f"- Latest tag/release: `{latest_tag}`",

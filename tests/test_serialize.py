@@ -40,7 +40,7 @@ class SerializeTests(unittest.TestCase):
 
         payload = json.loads(render_json(profile))
 
-        self.assertEqual(payload["repo_path"], "/tmp/demo")
+        self.assertEqual(payload["repo_path"], "demo")
         self.assertEqual(payload["generated_on"], "2026-06-05")
         self.assertEqual(payload["github"]["stars"], 1)
 
