@@ -1,19 +1,21 @@
 {
   "project_name": "codex-oss-maintainer-kit",
   "repo_path": "/Users/akashi/PenguLab/codex-oss-maintainer-kit",
-  "repo_url": null,
+  "repo_url": "https://github.com/Pengu-ai/codex-oss-maintainer-kit",
   "maintainer": "Pengu-ai",
   "branch": "main",
   "latest_tag": null,
   "activity_window_days": 90,
-  "commit_count": 3,
+  "commit_count": 5,
   "recent_commits": [
+    "dac75fe 2026-06-05 Pengu-ai Set public GitHub project URLs",
+    "6dda12c 2026-06-05 Pengu-ai Refresh self dogfood packet",
     "7675610 2026-06-05 Pengu-ai Add GitHub enrichment and JSON examples",
     "2f6ac33 2026-06-05 Pengu-ai Add X post explainer card",
     "28ca5d5 2026-06-05 Pengu-ai Initial maintainer evidence kit"
   ],
   "contributors": [
-    "3\tPengu-ai"
+    "5\tPengu-ai"
   ],
   "changed_files": [
     ".github/ISSUE_TEMPLATE/bug_report.md",
@@ -48,5 +50,18 @@
     "tests/test_cli.py"
   ],
   "generated_on": "2026-06-05",
-  "github": null
+  "github": {
+    "repo_full_name": "Pengu-ai/codex-oss-maintainer-kit",
+    "repo_html_url": "https://github.com/Pengu-ai/codex-oss-maintainer-kit",
+    "stars": 0,
+    "forks": 0,
+    "open_issues": 0,
+    "default_branch": "main",
+    "pushed_at": "2026-06-05T04:20:49Z",
+    "license_spdx_id": "MIT",
+    "merged_pull_requests": [],
+    "closed_issues": [],
+    "recent_releases": [],
+    "warnings": []
+  }
 }

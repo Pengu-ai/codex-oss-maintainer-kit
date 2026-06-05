@@ -4,7 +4,7 @@ Generated: 2026-06-05
 
 ## Repository Snapshot
 
-- Repository: TODO: add public GitHub URL
+- Repository: https://github.com/Pengu-ai/codex-oss-maintainer-kit
 - Local path: `/Users/akashi/PenguLab/codex-oss-maintainer-kit`
 - Maintainer: Pengu-ai
 - Default/current branch: `main`
@@ -13,8 +13,10 @@ Generated: 2026-06-05
 
 ## Active Maintenance Evidence
 
-- Recent commits found: 3
+- Recent commits found: 5
 - Recent commit examples:
+  - dac75fe 2026-06-05 Pengu-ai Set public GitHub project URLs
+  - 6dda12c 2026-06-05 Pengu-ai Refresh self dogfood packet
   - 7675610 2026-06-05 Pengu-ai Add GitHub enrichment and JSON examples
   - 2f6ac33 2026-06-05 Pengu-ai Add X post explainer card
   - 28ca5d5 2026-06-05 Pengu-ai Initial maintainer evidence kit
@@ -50,11 +52,20 @@ Generated: 2026-06-05
   - src/codex_oss_maintainer_kit/serialize.py
   - tests/test_cli.py
 - Contributors observed in Git history:
-  - 3	Pengu-ai
+  - 5	Pengu-ai
 
 ## GitHub Public Signals
 
-- Not collected. Re-run with `--github` and a public GitHub remote or `--repo-url`.
+- GitHub repository: https://github.com/Pengu-ai/codex-oss-maintainer-kit
+- Stars: 0
+- Forks: 0
+- Open issues/PRs counter: 0
+- GitHub default branch: `main`
+- Last pushed at: 2026-06-05T04:20:49Z
+- License: MIT
+- Merged pull requests in window: 0
+- Closed issues in window: 0
+- Recent releases found: 0
 
 ## Maintainer Workload
 
