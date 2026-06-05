@@ -16,11 +16,13 @@ The tool is intentionally conservative. It does not invent adoption, stars, down
 
 ## Install
 
+Install from GitHub:
+
 ```bash
-python -m pip install codex-oss-maintainer-kit
+python -m pip install "git+https://github.com/Pengu-ai/codex-oss-maintainer-kit.git"
 ```
 
-For local development:
+For local development from a clone:
 
 ```bash
 python -m venv .venv

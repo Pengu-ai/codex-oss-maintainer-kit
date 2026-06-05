@@ -13,8 +13,9 @@ Generated: 2026-06-05
 
 ## Active Maintenance Evidence
 
-- Recent commits found: 5
+- Recent commits found: 6
 - Recent commit examples:
+  - b3520ce 2026-06-05 Pengu-ai Record public GitHub self evidence
   - dac75fe 2026-06-05 Pengu-ai Set public GitHub project URLs
   - 6dda12c 2026-06-05 Pengu-ai Refresh self dogfood packet
   - 7675610 2026-06-05 Pengu-ai Add GitHub enrichment and JSON examples
@@ -52,20 +53,22 @@ Generated: 2026-06-05
   - src/codex_oss_maintainer_kit/serialize.py
   - tests/test_cli.py
 - Contributors observed in Git history:
-  - 5	Pengu-ai
+  - 6	Pengu-ai
 
 ## GitHub Public Signals
 
 - GitHub repository: https://github.com/Pengu-ai/codex-oss-maintainer-kit
 - Stars: 0
 - Forks: 0
-- Open issues/PRs counter: 0
+- Open issues/PRs counter: 3
 - GitHub default branch: `main`
-- Last pushed at: 2026-06-05T04:20:49Z
+- Last pushed at: 2026-06-05T04:22:39Z
 - License: MIT
 - Merged pull requests in window: 0
 - Closed issues in window: 0
-- Recent releases found: 0
+- Recent releases found: 1
+- Recent releases:
+  - v0.2.0: v0.2.0 - GitHub enrichment and JSON examples (2026-06-05T04:22:39Z) - https://github.com/Pengu-ai/codex-oss-maintainer-kit/releases/tag/v0.2.0
 
 ## Maintainer Workload
 
@@ -109,7 +112,7 @@ TODO: Replace with a 500-character plan for PR review, issue triage, release wor
 ## 30-Day Public Launch Plan
 
 - Publish the repository with an MIT license, clear README, examples, and issue templates.
-- Cut v0.1.0 and create a changelog entry.
+- Cut the next release and create a changelog entry.
 - Dogfood the CLI on 3-5 real public repositories with maintainer permission.
 - Open good-first-issue tasks for parser support, GitHub API enrichment, and docs examples.
 - Collect adoption evidence without artificial stars or misleading claims.

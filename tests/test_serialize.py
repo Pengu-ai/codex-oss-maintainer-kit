@@ -27,7 +27,7 @@ class SerializeTests(unittest.TestCase):
                 repo_html_url="https://github.com/owner/repo",
                 stars=1,
                 forks=2,
-                open_issues=3,
+                open_issues_and_prs_count=3,
                 default_branch="main",
                 pushed_at="2026-06-05T00:00:00Z",
                 license_spdx_id="MIT",

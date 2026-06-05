@@ -12,7 +12,7 @@ class GitHubSignals:
     repo_html_url: str | None
     stars: int | None
     forks: int | None
-    open_issues: int | None
+    open_issues_and_prs_count: int | None
     default_branch: str | None
     pushed_at: str | None
     license_spdx_id: str | None

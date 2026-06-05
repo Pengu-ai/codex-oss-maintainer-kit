@@ -91,7 +91,7 @@ TODO: Replace with a 500-character plan for PR review, issue triage, release wor
 ## 30-Day Public Launch Plan
 
 - Publish the repository with an MIT license, clear README, examples, and issue templates.
-- Cut v0.1.0 and create a changelog entry.
+- Cut the next release and create a changelog entry.
 - Dogfood the CLI on 3-5 real public repositories with maintainer permission.
 - Open good-first-issue tasks for parser support, GitHub API enrichment, and docs examples.
 - Collect adoption evidence without artificial stars or misleading claims.

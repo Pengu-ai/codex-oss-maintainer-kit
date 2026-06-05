@@ -39,7 +39,7 @@ def build_demo_profile() -> RepoProfile:
             repo_html_url="https://github.com/example/demo-maintainer-project",
             stars=128,
             forks=17,
-            open_issues=6,
+            open_issues_and_prs_count=6,
             default_branch="main",
             pushed_at="2026-06-05T02:00:00Z",
             license_spdx_id="MIT",

@@ -24,7 +24,7 @@ def collect_github_signals(
             repo_html_url=repo_url,
             stars=None,
             forks=None,
-            open_issues=None,
+            open_issues_and_prs_count=None,
             default_branch=None,
             pushed_at=None,
             license_spdx_id=None,
@@ -102,13 +102,13 @@ def collect_github_signals(
         repo_html_url=repo_payload.get("html_url") or f"https://github.com/{repo_full_name}",
         stars=_int_or_none(repo_payload.get("stargazers_count")),
         forks=_int_or_none(repo_payload.get("forks_count")),
-        open_issues=_int_or_none(repo_payload.get("open_issues_count")),
+        open_issues_and_prs_count=_int_or_none(repo_payload.get("open_issues_count")),
         default_branch=repo_payload.get("default_branch"),
         pushed_at=repo_payload.get("pushed_at"),
         license_spdx_id=license_info.get("spdx_id") if isinstance(license_info, dict) else None,
         merged_pull_requests=_list_of_dicts(prs_payload)[:12],
         closed_issues=_list_of_dicts(issues_payload)[:12],
-        recent_releases=_list_of_dicts(releases_payload)[:5],
+        recent_releases=_normalize_releases(_list_of_dicts(releases_payload))[:5],
         warnings=warnings,
     )
 
@@ -173,7 +173,7 @@ def _empty_signals(
         repo_html_url=repo_html_url,
         stars=None,
         forks=None,
-        open_issues=None,
+        open_issues_and_prs_count=None,
         default_branch=None,
         pushed_at=None,
         license_spdx_id=None,
@@ -194,3 +194,17 @@ def _list_of_dicts(value: object | None) -> list[dict[str, object]]:
     if not isinstance(value, list):
         return []
     return [item for item in value if isinstance(item, dict)]
+
+
+def _normalize_releases(items: list[dict[str, object]]) -> list[dict[str, object]]:
+    normalized = []
+    for item in items:
+        normalized.append(
+            {
+                "tag_name": item.get("tag_name"),
+                "name": item.get("name"),
+                "published_at": item.get("published_at"),
+                "html_url": item.get("html_url"),
+            }
+        )
+    return normalized

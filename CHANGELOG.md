@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.1 - 2026-06-05
+
+- Fixed README install instructions to point at the public GitHub repository before PyPI publication.
+- Renamed the GitHub issue counter field to `open_issues_and_prs_count` to avoid implying issue-only semantics.
+- Normalized release metadata in JSON output instead of storing full GitHub release API payloads.
+- Refreshed self-dogfood evidence after public issues and release creation.
+- Replaced version-specific generated launch-plan text with next-release wording.
+
 ## 0.2.0 - 2026-06-05
 
 - Added optional GitHub enrichment through `gh` for stars, forks, open issues, merged PRs, closed issues, releases, license, branch, and push metadata.

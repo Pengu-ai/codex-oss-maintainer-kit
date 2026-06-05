@@ -42,10 +42,14 @@ class GitHubInspectorTests(unittest.TestCase):
         assert signals is not None
         self.assertEqual(signals.stars, 42)
         self.assertEqual(signals.forks, 7)
-        self.assertEqual(signals.open_issues, 3)
+        self.assertEqual(signals.open_issues_and_prs_count, 3)
         self.assertEqual(len(signals.merged_pull_requests), 1)
         self.assertEqual(len(signals.closed_issues), 1)
         self.assertEqual(len(signals.recent_releases), 1)
+        self.assertEqual(
+            set(signals.recent_releases[0]),
+            {"tag_name", "name", "published_at", "html_url"},
+        )
 
 
 if __name__ == "__main__":

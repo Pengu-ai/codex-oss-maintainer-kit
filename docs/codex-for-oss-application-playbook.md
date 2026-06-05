@@ -41,7 +41,7 @@ Use this structure:
 
 ## 30-Day Launch Milestones
 
-- Week 1: publish v0.1.0, README, license, examples, and issue templates.
+- Week 1: publish the first release, README, license, examples, and issue templates.
 - Week 2: dogfood on real repos and publish packet examples.
 - Week 3: invite maintainer feedback and merge first external contribution.
 - Week 4: cut v0.2.0 with GitHub API enrichment or package registry evidence.
