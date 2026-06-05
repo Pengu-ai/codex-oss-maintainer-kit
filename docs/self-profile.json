@@ -6,8 +6,9 @@
   "branch": "main",
   "latest_tag": null,
   "activity_window_days": 90,
-  "commit_count": 6,
+  "commit_count": 7,
   "recent_commits": [
+    "47a8487 2026-06-05 Pengu-ai Fix public evidence metadata and install docs",
     "b3520ce 2026-06-05 Pengu-ai Record public GitHub self evidence",
     "dac75fe 2026-06-05 Pengu-ai Set public GitHub project URLs",
     "6dda12c 2026-06-05 Pengu-ai Refresh self dogfood packet",
@@ -16,7 +17,7 @@
     "28ca5d5 2026-06-05 Pengu-ai Initial maintainer evidence kit"
   ],
   "contributors": [
-    "6\tPengu-ai"
+    "7\tPengu-ai"
   ],
   "changed_files": [
     ".github/ISSUE_TEMPLATE/bug_report.md",
@@ -58,11 +59,17 @@
     "forks": 0,
     "open_issues_and_prs_count": 3,
     "default_branch": "main",
-    "pushed_at": "2026-06-05T04:22:39Z",
+    "pushed_at": "2026-06-05T14:15:05Z",
     "license_spdx_id": "MIT",
     "merged_pull_requests": [],
     "closed_issues": [],
     "recent_releases": [
+      {
+        "tag_name": "v0.2.1",
+        "name": "v0.2.1 - Evidence metadata and install doc fixes",
+        "published_at": "2026-06-05T14:15:05Z",
+        "html_url": "https://github.com/Pengu-ai/codex-oss-maintainer-kit/releases/tag/v0.2.1"
+      },
       {
         "tag_name": "v0.2.0",
         "name": "v0.2.0 - GitHub enrichment and JSON examples",

@@ -15,7 +15,9 @@ class GitHubInspectorTests(unittest.TestCase):
         )
         self.assertEqual(parse_github_repo("https://github.com/owner/repo/"), "owner/repo")
         self.assertEqual(parse_github_repo("git@github.com:owner/repo.git"), "owner/repo")
-        self.assertEqual(parse_github_repo("owner/repo"), "owner/repo")
+
+    def test_parse_github_repo_rejects_ambiguous_shorthand(self) -> None:
+        self.assertIsNone(parse_github_repo("owner/repo"))
 
     def test_collect_github_signals_uses_runner_payloads(self) -> None:
         def runner(args: list[str]) -> subprocess.CompletedProcess[str]:

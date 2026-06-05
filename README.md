@@ -1,6 +1,6 @@
 # Codex OSS Maintainer Kit
 
-Generate evidence packets and Codex-ready workflow plans for open-source maintainers.
+Generate evidence-bound maintainer packets for open-source repositories.
 
 This project helps maintainers turn repository activity into a clear, reviewable packet:
 
@@ -8,9 +8,7 @@ This project helps maintainers turn repository activity into a clear, reviewable
 - active maintenance evidence
 - maintainer workload notes
 - ecosystem importance TODOs
-- Codex workflow plan
-- API credit use plan
-- application draft fields for maintainer-support programs
+- optional application draft fields for maintainer-support programs
 
 The tool is intentionally conservative. It does not invent adoption, stars, downloads, maintainer status, or ecosystem importance. Missing evidence is marked as `TODO` so maintainers can fill it with real public links.
 
@@ -56,6 +54,16 @@ codex-oss-kit packet /path/to/repo \
   --out maintainer-packet.md
 ```
 
+Append application-draft fields only when you are preparing a reviewed application:
+
+```bash
+codex-oss-kit packet /path/to/repo \
+  --repo-url https://github.com/owner/repo \
+  --github \
+  --application-draft \
+  --out maintainer-application-draft.md
+```
+
 Write machine-readable JSON:
 
 ```bash
@@ -85,6 +93,8 @@ python -m codex_oss_maintainer_kit /path/to/repo --out maintainer-packet.md
 
 The GitHub enrichment reads public signals through `gh`: stars, forks, the GitHub open issues/PRs counter, recent merged pull requests, recent closed issues, recent releases, license, default branch, and latest push time. If `gh` is missing, unauthenticated, or offline, the packet keeps going and records collection warnings.
 
+Generated packets do not claim that a repository enables a specific product workflow unless you opt into the application draft and then edit it with real evidence.
+
 ## Why This Exists
 
 Open-source maintainers often need to explain the work that happens around code: review load, issue triage, releases, security fixes, and contributor onboarding. Those signals are scattered across Git, GitHub, package registries, and project docs.
@@ -109,7 +119,7 @@ This kit creates a structured starting point that maintainers can verify, edit, 
 
 ```bash
 PYTHONPATH=src python3 -m unittest discover -s tests
-PYTHONPATH=src python3 -m codex_oss_maintainer_kit . --out docs/self-maintainer-packet.md
+PYTHONPATH=src python3 -m codex_oss_maintainer_kit . --github --application-draft --out docs/self-maintainer-packet.md
 PYTHONPATH=src python3 -m codex_oss_maintainer_kit demo --out-dir docs/examples
 ```
 

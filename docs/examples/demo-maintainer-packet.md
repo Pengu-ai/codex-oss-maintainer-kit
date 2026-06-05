@@ -8,7 +8,7 @@ Generated: 2026-06-05
 - Local path: `/path/to/demo-maintainer-project`
 - Maintainer: @example-maintainer
 - Default/current branch: `main`
-- Latest tag: `v0.3.0`
+- Latest tag/release: `v0.3.0`
 - Activity window: last 90 days
 
 ## Active Maintenance Evidence
@@ -60,19 +60,11 @@ Generated: 2026-06-05
 - TODO: add concrete evidence such as GitHub stars, dependent projects, package downloads, users, forks, citations, or community adoption.
 - TODO: explain why the project matters even if it is early: workflow category, underserved maintainer pain, or infrastructure role.
 
-## Codex Workflows This Project Enables
+## Next Evidence To Add
 
-- Generate review briefs for incoming pull requests before maintainer review.
-- Convert Git history and issue activity into release checklists.
-- Produce triage prompts that preserve maintainer context and avoid stale assumptions.
-- Build repeatable maintainer packets for funding, security review, or contributor onboarding.
-
-## API Credit Use Plan
-
-- Batch summarize issue and pull request context for maintainers.
-- Generate release-note drafts from merged pull requests and commit history.
-- Run recurring quality checks on docs, onboarding, and maintainer handoff packets.
-- Keep all generated output reviewable before publication or repository changes.
+- Public links for any claims that are not already backed by Git or GitHub data.
+- Release notes, dependency/download signals, security advisories, or contributor-support examples when available.
+- Human-written context for why the maintenance work matters.
 
 ## Application Draft
 
@@ -87,11 +79,3 @@ TODO: Replace with a 500-character evidence-based summary covering adoption, mai
 ### How API credits would be used
 
 TODO: Replace with a 500-character plan for PR review, issue triage, release workflows, and maintainer automation.
-
-## 30-Day Public Launch Plan
-
-- Publish the repository with an MIT license, clear README, examples, and issue templates.
-- Cut the next release and create a changelog entry.
-- Dogfood the CLI on 3-5 real public repositories with maintainer permission.
-- Open good-first-issue tasks for parser support, GitHub API enrichment, and docs examples.
-- Collect adoption evidence without artificial stars or misleading claims.

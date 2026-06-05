@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.2 - 2026-06-05
+
+- Made application draft sections opt-in with `--application-draft` so default packets stay evidence-bound for arbitrary repositories.
+- Added friendly CLI error handling, positive `--days` validation, and real `packet`/`demo` subcommands while preserving the positional shortcut.
+- Used GitHub release data as a display fallback when local tags are missing from the checkout.
+- Tightened GitHub repository parsing to require real GitHub URLs instead of ambiguous `owner/repo` shorthand.
+- Added Git inspector integration coverage and aligned contributor test commands with CI.
+
 ## 0.2.1 - 2026-06-05
 
 - Fixed README install instructions to point at the public GitHub repository before PyPI publication.

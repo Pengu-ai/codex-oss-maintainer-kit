@@ -120,7 +120,6 @@ def parse_github_repo(repo_url: str | None) -> str | None:
     patterns = [
         r"github\.com[:/](?P<owner>[^/\s:]+)/(?P<repo>[^/\s]+?)(?:\.git)?$",
         r"^https?://api\.github\.com/repos/(?P<owner>[^/\s]+)/(?P<repo>[^/\s]+)$",
-        r"^(?P<owner>[A-Za-z0-9_.-]+)/(?P<repo>[A-Za-z0-9_.-]+)$",
     ]
     for pattern in patterns:
         match = re.search(pattern, text)
@@ -185,6 +184,8 @@ def _empty_signals(
 
 
 def _int_or_none(value: object) -> int | None:
+    if isinstance(value, bool):
+        return None
     if isinstance(value, int):
         return value
     return None

@@ -3,90 +3,61 @@ from __future__ import annotations
 from .models import GitHubSignals, RepoProfile
 
 
-def render_packet(profile: RepoProfile) -> str:
+def render_packet(profile: RepoProfile, include_application_draft: bool = False) -> str:
     repo_url = profile.repo_url or "TODO: add public GitHub URL"
     maintainer = profile.maintainer or "TODO: add maintainer name and GitHub username"
-    latest_tag = profile.latest_tag or "No Git tag found yet"
+    latest_tag = _latest_tag(profile)
     branch = profile.branch or "Unknown"
 
-    return "\n".join(
-        [
-            f"# {profile.project_name} Maintainer Evidence Packet",
-            "",
-            f"Generated: {profile.generated_on.isoformat()}",
-            "",
-            "## Repository Snapshot",
-            "",
-            f"- Repository: {repo_url}",
-            f"- Local path: `{profile.repo_path}`",
-            f"- Maintainer: {maintainer}",
-            f"- Default/current branch: `{branch}`",
-            f"- Latest tag: `{latest_tag}`",
-            f"- Activity window: last {profile.activity_window_days} days",
-            "",
-            "## Active Maintenance Evidence",
-            "",
-            f"- Recent commits found: {profile.commit_count}",
-            "- Recent commit examples:",
-            *(_bullet_lines(profile.recent_commits) or ["  - TODO: add recent commits after first release"]),
-            "- Recently touched files:",
-            *(_bullet_lines(profile.changed_files) or ["  - TODO: add real maintenance activity"]),
-            "- Contributors observed in Git history:",
-            *(_bullet_lines(profile.contributors) or ["  - TODO: add contributors as the project grows"]),
-            "",
-            "## GitHub Public Signals",
-            "",
-            *_github_lines(profile.github),
-            "",
-            "## Maintainer Workload",
-            "",
-            "- TODO: add monthly issue volume, PR volume, review burden, release cadence, and security triage needs.",
-            "- TODO: link to representative issues, pull requests, release notes, or discussions.",
-            "- TODO: state whether the maintainer is primary maintainer, core maintainer, or repo admin.",
-            "",
-            "## Ecosystem Importance",
-            "",
-            "- TODO: add concrete evidence such as GitHub stars, dependent projects, package downloads, users, forks, citations, or community adoption.",
-            "- TODO: explain why the project matters even if it is early: workflow category, underserved maintainer pain, or infrastructure role.",
-            "",
-            "## Codex Workflows This Project Enables",
-            "",
-            "- Generate review briefs for incoming pull requests before maintainer review.",
-            "- Convert Git history and issue activity into release checklists.",
-            "- Produce triage prompts that preserve maintainer context and avoid stale assumptions.",
-            "- Build repeatable maintainer packets for funding, security review, or contributor onboarding.",
-            "",
-            "## API Credit Use Plan",
-            "",
-            "- Batch summarize issue and pull request context for maintainers.",
-            "- Generate release-note drafts from merged pull requests and commit history.",
-            "- Run recurring quality checks on docs, onboarding, and maintainer handoff packets.",
-            "- Keep all generated output reviewable before publication or repository changes.",
-            "",
-            "## Application Draft",
-            "",
-            "### Role",
-            "",
-            "TODO: I am the primary/core maintainer of this public open-source repository and responsible for roadmap, reviews, releases, and contributor support.",
-            "",
-            "### Why this repository is eligible",
-            "",
-            "TODO: Replace with a 500-character evidence-based summary covering adoption, maintenance activity, and ecosystem importance.",
-            "",
-            "### How API credits would be used",
-            "",
-            "TODO: Replace with a 500-character plan for PR review, issue triage, release workflows, and maintainer automation.",
-            "",
-            "## 30-Day Public Launch Plan",
-            "",
-            "- Publish the repository with an MIT license, clear README, examples, and issue templates.",
-            "- Cut the next release and create a changelog entry.",
-            "- Dogfood the CLI on 3-5 real public repositories with maintainer permission.",
-            "- Open good-first-issue tasks for parser support, GitHub API enrichment, and docs examples.",
-            "- Collect adoption evidence without artificial stars or misleading claims.",
-            "",
-        ]
-    )
+    lines = [
+        f"# {profile.project_name} Maintainer Evidence Packet",
+        "",
+        f"Generated: {profile.generated_on.isoformat()}",
+        "",
+        "## Repository Snapshot",
+        "",
+        f"- Repository: {repo_url}",
+        f"- Local path: `{profile.repo_path}`",
+        f"- Maintainer: {maintainer}",
+        f"- Default/current branch: `{branch}`",
+        f"- Latest tag/release: `{latest_tag}`",
+        f"- Activity window: last {profile.activity_window_days} days",
+        "",
+        "## Active Maintenance Evidence",
+        "",
+        f"- Recent commits found: {profile.commit_count}",
+        "- Recent commit examples:",
+        *(_bullet_lines(profile.recent_commits) or ["  - TODO: add recent commits after first release"]),
+        "- Recently touched files:",
+        *(_bullet_lines(profile.changed_files) or ["  - TODO: add real maintenance activity"]),
+        "- Contributors observed in Git history:",
+        *(_bullet_lines(profile.contributors) or ["  - TODO: add contributors as the project grows"]),
+        "",
+        "## GitHub Public Signals",
+        "",
+        *_github_lines(profile.github),
+        "",
+        "## Maintainer Workload",
+        "",
+        "- TODO: add monthly issue volume, PR volume, review burden, release cadence, and security triage needs.",
+        "- TODO: link to representative issues, pull requests, release notes, or discussions.",
+        "- TODO: state whether the maintainer is primary maintainer, core maintainer, or repo admin.",
+        "",
+        "## Ecosystem Importance",
+        "",
+        "- TODO: add concrete evidence such as GitHub stars, dependent projects, package downloads, users, forks, citations, or community adoption.",
+        "- TODO: explain why the project matters even if it is early: workflow category, underserved maintainer pain, or infrastructure role.",
+        "",
+        "## Next Evidence To Add",
+        "",
+        "- Public links for any claims that are not already backed by Git or GitHub data.",
+        "- Release notes, dependency/download signals, security advisories, or contributor-support examples when available.",
+        "- Human-written context for why the maintenance work matters.",
+        "",
+    ]
+    if include_application_draft:
+        lines.extend(_application_draft_lines())
+    return "\n".join(lines)
 
 
 def _bullet_lines(lines: list[str]) -> list[str]:
@@ -124,6 +95,36 @@ def _github_lines(github: GitHubSignals | None) -> list[str]:
         lines.append("- Recent releases:")
         lines.extend(_release_lines(github.recent_releases))
     return lines
+
+
+def _latest_tag(profile: RepoProfile) -> str:
+    if profile.latest_tag:
+        return profile.latest_tag
+    if profile.github and profile.github.recent_releases:
+        release = profile.github.recent_releases[0]
+        tag = release.get("tag_name") or release.get("tagName")
+        if isinstance(tag, str) and tag:
+            return tag
+    return "No Git tag or GitHub release found yet"
+
+
+def _application_draft_lines() -> list[str]:
+    return [
+        "## Application Draft",
+        "",
+        "### Role",
+        "",
+        "TODO: I am the primary/core maintainer of this public open-source repository and responsible for roadmap, reviews, releases, and contributor support.",
+        "",
+        "### Why this repository is eligible",
+        "",
+        "TODO: Replace with a 500-character evidence-based summary covering adoption, maintenance activity, and ecosystem importance.",
+        "",
+        "### How API credits would be used",
+        "",
+        "TODO: Replace with a 500-character plan for PR review, issue triage, release workflows, and maintainer automation.",
+        "",
+    ]
 
 
 def _value_or_todo(value: int | None, fallback: str) -> str:

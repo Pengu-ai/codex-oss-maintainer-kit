@@ -15,7 +15,7 @@ Thanks for helping improve Codex OSS Maintainer Kit.
 python -m venv .venv
 . .venv/bin/activate
 python -m pip install -e ".[dev]"
-python -m pytest
+PYTHONPATH=src python3 -m unittest discover -s tests
 ```
 
 ## Pull Request Expectations
