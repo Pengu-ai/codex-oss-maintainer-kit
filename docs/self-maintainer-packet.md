@@ -15,7 +15,7 @@ Generated: 2026-06-05
 
 - Recent commits found: 3
 - Recent commit examples:
-  - 9580925 2026-06-05 Pengu-ai Add GitHub enrichment and JSON examples
+  - 7675610 2026-06-05 Pengu-ai Add GitHub enrichment and JSON examples
   - 2f6ac33 2026-06-05 Pengu-ai Add X post explainer card
   - 28ca5d5 2026-06-05 Pengu-ai Initial maintainer evidence kit
 - Recently touched files:
