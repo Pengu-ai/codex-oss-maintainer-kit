@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">OSS活動の履歴書</title>
+  <desc id="desc">GitHubの見えない保守活動を事実ベースで整理するCLIの紹介カード</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="58%" stop-color="#12303a"/>
+      <stop offset="100%" stop-color="#18251f"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#000000" flood-opacity="0.28"/>
+    </filter>
+    <style>
+      .jp { font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif; }
+      .title { font-size: 96px; font-weight: 850; letter-spacing: 0; fill: #f8fafc; }
+      .subtitle { font-size: 36px; font-weight: 650; letter-spacing: 0; fill: #c7f9e5; }
+      .body { font-size: 35px; font-weight: 650; letter-spacing: 0; fill: #0f172a; }
+      .small { font-size: 29px; font-weight: 600; letter-spacing: 0; fill: #cbd5e1; }
+      .label { font-size: 24px; font-weight: 800; letter-spacing: 0; fill: #93c5fd; }
+      .pill { font-size: 25px; font-weight: 800; letter-spacing: 0; fill: #0f172a; }
+      .muted { fill: #94a3b8; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <path d="M0 742 C260 675 421 811 690 742 C986 665 1168 635 1600 704 L1600 900 L0 900 Z" fill="#0f172a" opacity="0.55"/>
+  <circle cx="1320" cy="160" r="210" fill="#38bdf8" opacity="0.07"/>
+  <circle cx="190" cy="790" r="230" fill="#22c55e" opacity="0.08"/>
+
+  <g transform="translate(92 54)">
+    <rect x="0" y="0" width="286" height="54" rx="27" fill="#c7f9e5"/>
+    <text x="143" y="37" text-anchor="middle" class="jp pill">OSS maintainer向け</text>
+  </g>
+
+  <g transform="translate(92 202)">
+    <text class="jp title" x="0" y="0">OSS活動の</text>
+    <text class="jp title" x="0" y="112">履歴書をつくるCLI</text>
+    <text class="jp subtitle" x="4" y="178">スター数だけでは見えない、保守の仕事を整理する。</text>
+  </g>
+
+  <g transform="translate(92 466)" filter="url(#shadow)">
+    <rect x="0" y="0" width="444" height="254" rx="18" fill="#f8fafc"/>
+    <text x="38" y="58" class="jp label">Git履歴から</text>
+    <text x="38" y="114" class="jp body">commit</text>
+    <text x="38" y="166" class="jp body">変更ファイル</text>
+    <text x="38" y="218" class="jp body">contributor</text>
+  </g>
+
+  <g transform="translate(578 466)" filter="url(#shadow)">
+    <rect x="0" y="0" width="444" height="254" rx="18" fill="#ecfeff"/>
+    <text x="38" y="58" class="jp label">整理するもの</text>
+    <text x="38" y="114" class="jp body">PRレビュー</text>
+    <text x="38" y="166" class="jp body">issue対応</text>
+    <text x="38" y="218" class="jp body">release作業</text>
+  </g>
+
+  <g transform="translate(1064 466)" filter="url(#shadow)">
+    <rect x="0" y="0" width="444" height="254" rx="18" fill="#f0fdf4"/>
+    <text x="38" y="58" class="jp label">使いどころ</text>
+    <text x="38" y="114" class="jp body">OSS支援申請</text>
+    <text x="38" y="166" class="jp body">助成金・funding</text>
+    <text x="38" y="218" class="jp body">Codex活用計画</text>
+  </g>
+
+  <g transform="translate(92 765)">
+    <text class="jp small" x="0" y="0">盛らない。スター乞食しない。GitHubの事実 + 足りない証拠TODOを分けて出す。</text>
+    <text class="jp small muted" x="0" y="48">codex-oss-maintainer-kit</text>
+  </g>
+</svg>
